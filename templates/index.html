@@ -1,32 +1,65 @@
-<html>
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="./static/script.js"></script>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<!DOCTYPE html>
+<html lang="en">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/act.css') }}">
+    </head>
+    <body>
 
-</head>
-<body>
-     <ul class="nav">
-        <li>
-          <i class="fa fa-home"></i>
-          <div class="side bar">Home</div>
-        </li>
-        <li>
-          <i class="fa fa-align-right"></i>
-          <div class="side bar">About</div>
-        </li>
-        <li>
-          <i class="fa fa-phone"></i>
-          <div class="side bar">Contact</div>
-        </li>
-      </ul>
-      
-      <div class="file-selection">  
-      <div class="custom-file">
-        <input type="file" id="selectFile" multiple value="Upload DataSet" max-file="5" max-data-size="5">
-    </div>
-      </div>
-      
-      
+
+<!--<input type="checkbox" name="t-help" id="t-help" checked>
+<input type="checkbox" name="t-success" id="t-success" checked>
+<input type="checkbox" name="t-warning" id="t-warning" checked>
+<input type="checkbox" name="t-error" id="t-error" checked>
+  <div class="toast-panel">
+	<div class="toast-item help">
+		<div class="toast help">
+			<label for="t-help" class="close"></label>
+			<h3>Help!</h3>
+			<p>Do you have a problem? Just use this <a href="#">contact form</a>.</p>
+		</div>
+	</div>
+	<div class="toast-item success">
+		<div class="toast success">
+			<label for="t-success" class="close"></label>
+			<h3>Success!</h3>
+			<p>Your message has been sent successfully.</p>
+		</div>
+	</div>
+	<div class="toast-item warning">
+		<div class="toast warning">
+			<label for="t-warning" class="close"></label>
+			<h3>Warning!</h3>
+			<p>Sorry, there was a problem with your request.</p>
+		</div>
+	</div>
+	<div class="toast-item error">
+		<div class="toast error">
+			<label for="t-error" class="close"></label>
+			<h3>Error!</h3>
+			<p>Change a few thing up and try submitting again.</p>
+		</div>
+	</div>
+	<div class="toast-icons">
+		<label for="t-help" class="toast-icon icon-help"></label>
+		<label for="t-success"  class="toast-icon icon-success"></label>
+		<label for="t-warning"  class="toast-icon icon-warning"></label>
+		<label for="t-error" class="toast-icon icon-error"></label>
+	</div>
+ </div>-->
+<div class="container">
+	<h1>Welcome to SentimentLens</h1>
+	<form action="/" method="post">
+		<textarea name="inputField" placeholder="Enter something..." maxlength="500" rows="5" cols="30"></textarea>
+		<br>
+		<input type="submit" value="Submit">
+	</form>
+	{% if submitted_text %}
+		<div class="output">
+			<p>You entered: {{ submitted_text }}</p>
+		</div>
+	{% endif %}
+</div>
+
+
+
 </body>
+</html>
